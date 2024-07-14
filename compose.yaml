@@ -1,0 +1,16 @@
+services:
+  pocketbase:
+    image: ghcr.io/adrianliechti/loop-pocketbase
+    pull_policy: always
+    build: .
+    environment:
+      - APP_URL=http://localhost:8090
+      - APP_NAME=PocketBase
+      - ADMIN_USERNAME=admin@pocketbase.local
+      - ADMIN_PASSWORD=admin1234!
+    ports:
+      - 8090:8090
+    volumes:
+      - pb_data:/pb_data
+volumes:
+  pb_data:
