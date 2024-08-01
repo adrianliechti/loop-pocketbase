@@ -6,7 +6,7 @@ vars:
   REPOSITORY: ghcr.io/adrianliechti/loop-pocketbase
 
 tasks:
-  push:
+  publish:
     cmds:
       - docker buildx build --platform linux/amd64,linux/arm64 --push --tag {{.REPOSITORY}} .
   
